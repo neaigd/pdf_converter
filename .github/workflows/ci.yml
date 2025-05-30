@@ -23,7 +23,13 @@ jobs:
         run: npm ci
 
       - name: Lint
-        run: npm run lint
+        run: npm run lint > lint-log.txt 2>&1
+
+      - name: Upload Lint Log
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-log
+          path: lint-log.txt
 
       - name: Test
         run: npm test
