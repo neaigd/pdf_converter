@@ -26,8 +26,8 @@ const FormatSelector: React.FC<FormatSelectorProps> = ({ selectedFormats, onForm
 
   return (
     <div className="space-y-3">
-      <h3 className="text-lg font-medium text-gray-900">Selecione os formatos de saída</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">Select Output Formats</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
         {formats.map((format) => (
           <div key={format.value} className="flex items-center">
             <input
@@ -35,9 +35,9 @@ const FormatSelector: React.FC<FormatSelectorProps> = ({ selectedFormats, onForm
               id={`format-${format.value}`}
               checked={selectedFormats.includes(format.value)}
               onChange={() => handleFormatToggle(format.value)}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:focus:ring-blue-600 dark:ring-offset-gray-800 rounded"
             />
-            <label htmlFor={`format-${format.value}`} className="ml-2 block text-sm text-gray-900">
+            <label htmlFor={`format-${format.value}`} className="ml-2 block text-sm text-gray-900 dark:text-gray-300">
               {format.label}
             </label>
           </div>
