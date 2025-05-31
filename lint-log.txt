@@ -1,0 +1,54 @@
+
+> pdf_converter@1.0.0 lint
+> eslint . --ext .ts,.js
+
+
+/media/peixoto/stuff/pdf-converter/frontend/src/hooks/use-toast.ts
+  21:7  error  'actionTypes' is assigned a value but only used as a type  @typescript-eslint/no-unused-vars
+
+/media/peixoto/stuff/pdf-converter/frontend/tailwind.config.js
+   6:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+   7:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+   8:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+   9:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  10:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  11:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  12:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  13:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  14:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  15:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  16:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  17:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  18:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  19:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  20:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  21:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  22:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  23:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  24:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  25:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  26:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  27:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  28:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  29:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  30:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  31:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  32:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  33:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  34:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  35:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  36:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  37:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  38:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  39:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  40:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  41:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  42:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  43:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  44:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  45:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  46:2   error  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  48:13  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+✖ 43 problems (43 errors, 0 warnings)
+
