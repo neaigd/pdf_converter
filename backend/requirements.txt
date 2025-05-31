@@ -1,0 +1,7 @@
+Flask
+pdf2docx
+PyMuPDF
+python-docx
+odfpy
+pytest
+pytest-flask

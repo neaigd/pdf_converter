@@ -1,8 +1,8 @@
-# PDF Converter - Aplicativo Web de Conversão de PDF
+# PDF Converter - Web Application
 
-Este repositório contém um aplicativo web para conversão de arquivos PDF para vários formatos de texto (DOCX, ODT, TXT, RTF, HTML), mantendo a formatação original.
+This repository contains a web application for converting PDF files to various text formats (DOCX, ODT, TXT, RTF, HTML), aiming to maintain original formatting.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 pdf-converter/
@@ -18,43 +18,44 @@ pdf-converter/
 │   ├── package.json        # Dependências do frontend
 │   └── tsconfig.json       # Configuração TypeScript
 ├── backend/
-│   ├── src/                # Código-fonte do backend
-│   │   ├── routes/         # Rotas da API
-│   │   ├── services/       # Serviços de conversão
-│   │   └── utils/          # Utilitários
-│   ├── main.py             # Ponto de entrada do backend
-│   └── requirements.txt    # Dependências do backend
-└── README.md               # Este arquivo
+│   ├── src/                # Backend source code
+│   │   ├── routes/         # API routes (e.g., conversion.py)
+│   │   ├── services/       # Conversion services (e.g., converter.py)
+│   │   └── utils/          # Utility functions (if any)
+│   ├── main.py             # Backend entry point
+│   └── requirements.txt    # Backend dependencies
+└── README.md               # This file
 ```
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 ### Frontend
-- React.js com TypeScript
-- Tailwind CSS para estilização
-- React Dropzone para upload de arquivos
-- Axios para requisições HTTP
+- React.js with TypeScript
+- Vite as build tool and dev server
+- Tailwind CSS for styling
+- React Dropzone for file uploads
+- Axios for HTTP requests
 
 ### Backend
 - Flask (Python)
-- pdf2docx para conversão PDF → DOCX
-- PyMuPDF para manipulação de PDF
-- python-docx para manipulação de DOCX
-- odfpy para manipulação de ODT
+- pdf2docx for PDF → DOCX conversion
+- PyMuPDF (fitz) for PDF manipulation (HTML, TXT extraction)
+- python-docx for DOCX manipulation (used by pdf2docx)
+- odfpy for ODT manipulation (currently placeholder)
 
-### Infraestrutura
-- GitHub Pages para hospedagem do frontend
-- GitHub Actions para CI/CD
+### Infrastructure (Example)
+- GitHub Pages for frontend hosting (example setup)
+- GitHub Actions for CI/CD (example setup)
 
-## Funcionalidades
+## Features
 
-- Upload de arquivos PDF via arrastar e soltar ou seleção de arquivo
-- Seleção de múltiplos formatos de saída
-- Conversão mantendo a formatação original
-- Download dos arquivos convertidos
-- Interface responsiva e minimalista
+- PDF file upload via drag & drop or file selection
+- Selection of multiple output formats (DOCX, HTML, TXT fully supported; ODT, RTF are placeholders)
+- Conversion aiming to maintain original formatting
+- Automatic download of converted files
+- Responsive and minimalist interface with dark mode support
 
-## Instalação e Execução
+## Installation and Execution
 
 ### Frontend
 
@@ -63,26 +64,42 @@ cd frontend
 pnpm install
 pnpm run dev
 ```
+The frontend will typically be available at `http://localhost:5173`.
 
 ### Backend
 
 ```bash
 cd backend
-python -m venv venv
+python3 -m venv venv  # Use python3 if default python is 2.x
 source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate  # Windows
+# For Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python main.py
 ```
+The backend server will run on `http://localhost:5000`.
+It creates an `uploads/` directory for temporary file storage.
 
-## Automação com GitHub Actions
+## Backend API
 
-O projeto inclui configuração de CI/CD com GitHub Actions para:
+The primary API endpoint for conversion is:
 
-1. Build automático ao fazer push para a branch main
-2. Deploy automático para GitHub Pages
+- **`POST /api/convert`**
+    - **Request:** `multipart/form-data` with fields:
+        - `file`: The PDF file to convert.
+        - `format`: The desired output format (e.g., 'docx', 'html', 'txt', 'odt', 'rtf').
+    - **Response:**
+        - Success (200 OK): The converted file is sent as a blob for download.
+        - Not Implemented (501 Not Implemented): If the requested format (e.g., 'odt', 'rtf') is not yet supported.
+        - Bad Request (400 Bad Request): For missing file/format or invalid parameters.
+        - Server Error (500 Internal Server Error): If conversion fails.
 
-## Licença
+## Automation with GitHub Actions (Example)
+
+The project includes an example CI/CD configuration with GitHub Actions for:
+
+1. Automatic build on push to the main branch.
+2. Automatic deployment to GitHub Pages (for the frontend).
+
+## License
 
 MIT
